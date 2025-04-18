@@ -1,0 +1,41 @@
+#if defined(UNDER_CE)
+#include <winbase.h>
+#else
+#include <windows.h>
+#endif
+
+#define FILE_VERSION    1,1,3,0
+IDI_ICON1       ICON    "Cross_verbal_swords.ico"
+
+VS_VERSION_INFO VERSIONINFO
+    FILEVERSION FILE_VERSION
+    FILEFLAGSMASK 0x3fL
+
+#ifdef _DEBUG
+    FILEFLAGS VS_FF_DEBUG
+#else
+    FILEFLAGS 0x0L
+#endif
+    FILEOS VOS__WINDOWS32
+    FILETYPE VFT_DLL
+    FILESUBTYPE 0x0L
+    BEGIN
+
+        BLOCK "StringFileInfo"
+        BEGIN
+            BLOCK "080404b0"        // Simplified Chinese, GBK
+            BEGIN
+                VALUE "CompanyName", "作者：Carburn Ashroom"
+                VALUE "ProductName", "帝成辩论赛"
+                VALUE "FileDescription", "《皇帝成长计划2》中辩论题材小游戏的翻版重制"
+                VALUE "LegalCopyright", "开源、免费"
+                VALUE "OriginalFilename", "dispute.exe"
+                VALUE "ProductVersion", "2023.12.14"
+            END
+        END
+
+        BLOCK "VarFileInfo"
+        BEGIN
+            VALUE "Translation", 0x804, 1200        //Simplified Chinese, GB2312
+        END
+    END
